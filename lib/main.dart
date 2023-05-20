@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'package:todo_list_app/models/task.dart';
@@ -24,6 +26,14 @@ class _MyHomePageState extends State<MyHomePage> {
     Task(taskName: "Groceries", isDone: false),
   ];
 
+  List<String> url = [
+    "assets/images/bgimage_1.jpg",
+    "assets/images/bgimage_2.jpg",
+    "assets/images/bgimage_3.jpg",
+    "assets/images/bgimage_4.jpg",
+  ];
+  var random = Random();
+
   // to delete task
   void deletetask(int index) {
     setState(() {
@@ -31,12 +41,14 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  // to add new task
   void addnewtask(String taskname) {
     setState(() {
       Tasks.add(Task(taskName: taskname, isDone: false));
     });
   }
 
+  //show a popup to add new task
   void createNewTask() {
     showDialog(
         context: context, builder: (_) => NewTask(addTaskCallback: addnewtask));
@@ -44,14 +56,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("ToDo App"),
-        centerTitle: true,
+    return Container(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('${url[random.nextInt(4)]}'),
+          fit: BoxFit.cover,
+        ),
       ),
-      body: TaskList(tasklist: Tasks, deletetask: deletetask),
-      floatingActionButton: FloatingActionButton(
-          onPressed: createNewTask, child: Icon(Icons.add)),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body:
+            SafeArea(child: TaskList(tasklist: Tasks, deletetask: deletetask)),
+        floatingActionButton: FloatingActionButton(
+            onPressed: createNewTask, child: Icon(Icons.add)),
+      ),
     );
   }
 }

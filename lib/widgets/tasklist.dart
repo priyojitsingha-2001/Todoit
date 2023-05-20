@@ -12,8 +12,6 @@ class TaskList extends StatefulWidget {
 }
 
 class _TaskListState extends State<TaskList> {
-  // bool? ischecked = false;
-
   @override
   Widget build(BuildContext context) {
     return widget.tasklist.isEmpty
@@ -30,6 +28,7 @@ class _TaskListState extends State<TaskList> {
             itemCount: widget.tasklist.length,
             itemBuilder: (context, index) {
               return Card(
+                color: Colors.white54,
                 margin: EdgeInsets.all(10),
                 elevation: 6,
                 child: ListTile(
@@ -45,14 +44,23 @@ class _TaskListState extends State<TaskList> {
                             widget.tasklist[index].isDone = false;
                         });
                       }),
-                  title: Text("${widget.tasklist[index].taskName}"),
+                  title: Text(
+                    "${widget.tasklist[index].taskName}",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    ),
+                  ),
                   trailing: IconButton(
                       onPressed: () {
                         setState(() {
                           widget.deletetask(index);
                         });
                       },
-                      icon: Icon(Icons.close)),
+                      icon: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                      )),
                 ),
               );
             },

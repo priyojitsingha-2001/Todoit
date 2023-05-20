@@ -4,6 +4,7 @@ linux
 windows
 macos
 README.md
+android/build.gradle
 # Miscellaneous
 *.class
 *.log
