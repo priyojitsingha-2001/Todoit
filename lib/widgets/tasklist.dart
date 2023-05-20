@@ -49,6 +49,9 @@ class _TaskListState extends State<TaskList> {
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
+                      decoration: widget.tasklist[index].isDone
+                          ? TextDecoration.lineThrough
+                          : TextDecoration.none,
                     ),
                   ),
                   trailing: IconButton(
