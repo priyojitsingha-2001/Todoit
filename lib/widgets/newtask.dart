@@ -30,17 +30,14 @@ class _NewTaskState extends State<NewTask> {
   Widget build(BuildContext context) {
     return AlertDialog(
       content: Container(
-        height: 160,
+        height: 150,
         child: Column(children: [
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
               controller: taskController,
               decoration: InputDecoration(hintText: "Enter Task here"),
             ),
-          ),
-          SizedBox(
-            height: 10,
           ),
           Container(
               padding: EdgeInsets.all(27),
