@@ -1,7 +1,9 @@
+.gitignore
 test
 linux
 windows
 macos
+README.md
 # Miscellaneous
 *.class
 *.log
