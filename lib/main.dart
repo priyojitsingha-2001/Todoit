@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Task(taskName: "Groceries", isDone: false),
   ];
 
-  List<String> url = [
+  List<String> imagelinks = [
     "assets/images/bgimage_1.jpg",
     "assets/images/bgimage_2.jpg",
     "assets/images/bgimage_3.jpg",
@@ -54,12 +54,23 @@ class _MyHomePageState extends State<MyHomePage> {
         context: context, builder: (_) => NewTask(addTaskCallback: addnewtask));
   }
 
+  //to shuffle the images
+  void shuffleimagelinks() {
+    imagelinks.shuffle();
+  }
+
+  @override
+  void initState() {
+    shuffleimagelinks();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('${url[random.nextInt(4)]}'),
+          image: AssetImage('${imagelinks.first}'),
           fit: BoxFit.cover,
         ),
       ),
