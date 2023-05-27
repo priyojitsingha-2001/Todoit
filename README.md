@@ -1,16 +1,10 @@
 # todo_list_app
 
-A new Flutter project.
+An app where you can write todo task and then check and uncheck them and even delete them when done
 
-## Getting Started
+## Video demo
 
-This project is a starting point for a Flutter application.
+https://github.com/priyojitsingha-2001/Todo-App/assets/69103769/ea3fcc47-0c18-406c-b736-8ce768cd3c8b
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
