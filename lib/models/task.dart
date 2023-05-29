@@ -1,23 +1,21 @@
 class Task {
-  int? id;
-  String taskName;
-  bool isDone;
+  String taskName = "";
+  bool isDone = false;
 
   //constructor
-  Task({this.id, required this.taskName, required this.isDone});
+  Task({required this.taskName, required this.isDone});
 
   //Converting the data to map
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       'taskname': taskName,
       'isDone': isDone,
     };
   }
 
-  //for debugging purpose
-  @override
-  String toString() {
-    return 'Task(id:$id,taskname:$taskName,isdone:$isDone)';
+  //create a object from map/json
+  Task.fromMap(Map<String, dynamic> map) {
+    this.taskName = map['taskName'];
+    this.isDone = map['isDone'];
   }
 }
