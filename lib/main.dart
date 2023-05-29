@@ -22,8 +22,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Task> Tasks = [
-    Task(taskName: "Homework", isDone: false),
-    Task(taskName: "Groceries", isDone: false),
+    Task(taskName: 'write a blog', isDone: false),
+    Task(taskName: 'leetcode', isDone: false),
   ];
 
   List<String> imagelinks = [
@@ -34,17 +34,27 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
   var random = Random();
 
+  // to add new task
+  void addnewtask(String taskname) {
+    Task newtask = Task(taskName: taskname, isDone: false);
+    setState(() {
+      Tasks.add(newtask);
+    });
+  }
+
+  //update task
+  void updatetask(Task object) {
+    if (!object.isDone) {
+      object.isDone = true;
+    } else {
+      object.isDone = false;
+    }
+  }
+
   // to delete task
   void deletetask(int index) {
     setState(() {
       Tasks.removeAt(index);
-    });
-  }
-
-  // to add new task
-  void addnewtask(String taskname) {
-    setState(() {
-      Tasks.add(Task(taskName: taskname, isDone: false));
     });
   }
 
@@ -76,8 +86,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body:
-            SafeArea(child: TaskList(tasklist: Tasks, deletetask: deletetask)),
+        body: SafeArea(
+          child: TaskList(
+            tasklist: Tasks,
+            deletetask: deletetask,
+            updatetask: updatetask,
+          ),
+        ),
         floatingActionButton: FloatingActionButton(
             onPressed: createNewTask, child: Icon(Icons.add)),
       ),

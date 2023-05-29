@@ -4,8 +4,13 @@ import 'package:todo_list_app/models/task.dart';
 class TaskList extends StatefulWidget {
   final List<Task> tasklist;
   final Function deletetask;
+  final Function updatetask;
 
-  TaskList({super.key, required this.deletetask, required this.tasklist});
+  TaskList(
+      {super.key,
+      required this.updatetask,
+      required this.deletetask,
+      required this.tasklist});
 
   @override
   State<TaskList> createState() => _TaskListState();
@@ -38,10 +43,11 @@ class _TaskListState extends State<TaskList> {
                       value: widget.tasklist[index].isDone,
                       onChanged: (_) {
                         setState(() {
-                          if (!widget.tasklist[index].isDone) {
-                            widget.tasklist[index].isDone = true;
-                          } else
-                            widget.tasklist[index].isDone = false;
+                          // if (!widget.tasklist[index].isDone) {
+                          //   widget.tasklist[index].isDone = true;
+                          // } else
+                          //   widget.tasklist[index].isDone = false;
+                          widget.updatetask(widget.tasklist[index]);
                         });
                       }),
                   title: Text(
