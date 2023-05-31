@@ -15,7 +15,7 @@ class Task {
 
   //create a object from map/json
   Task.fromMap(Map<String, dynamic> map) {
-    this.taskName = map['taskName'];
+    this.taskName = map['taskname'];
     this.isDone = map['isDone'];
   }
 }
