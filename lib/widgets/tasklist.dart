@@ -5,12 +5,15 @@ class TaskList extends StatefulWidget {
   final List<Task> tasklist;
   final Function deletetask;
   final Function updatetask;
+  final Function updateCallback;
 
-  TaskList(
-      {super.key,
-      required this.updatetask,
-      required this.deletetask,
-      required this.tasklist});
+  TaskList({
+    super.key,
+    required this.updatetask,
+    required this.deletetask,
+    required this.tasklist,
+    required this.updateCallback,
+  });
 
   @override
   State<TaskList> createState() => _TaskListState();
@@ -22,9 +25,9 @@ class _TaskListState extends State<TaskList> {
     return widget.tasklist.isEmpty
         ? Center(
             child: Text(
-              "No Task Left!",
+              "No Task Left 👍",
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -65,11 +68,11 @@ class _TaskListState extends State<TaskList> {
                   trailing: IconButton(
                       onPressed: () {
                         setState(() {
-                          widget.deletetask(index);
+                          widget.deletetask(index, widget.updateCallback);
                         });
                       },
                       icon: Icon(
-                        Icons.close,
+                        Icons.delete,
                         color: Colors.white,
                       )),
                 ),

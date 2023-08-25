@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list_app/utils/task_operations.dart';
 
 class NewTask extends StatefulWidget {
-  final Function(String) addTaskCallback;
-
-  NewTask({super.key, required this.addTaskCallback});
+  final Function updateCallback;
+  const NewTask({super.key, required this.updateCallback});
 
   @override
   State<NewTask> createState() => _NewTaskState();
@@ -15,7 +15,7 @@ class _NewTaskState extends State<NewTask> {
   void addTask() {
     final taskName = taskController.text.trim();
     if (taskName.isNotEmpty) {
-      widget.addTaskCallback(taskName);
+      addnewtask(taskname: taskName, updateCallback: widget.updateCallback);
       Navigator.of(context).pop();
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
