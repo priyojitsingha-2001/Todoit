@@ -1,3 +1,8 @@
+// this file conatins code to
+//add new task
+// update any task (check or uncheck it)
+// delete any previous task
+
 import 'package:todo_list_app/models/task.dart';
 import 'package:todo_list_app/utils/data_storage.dart';
 
