@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:todo_list_app/utils/data_storage.dart';
 import 'package:todo_list_app/utils/task_operations.dart';
 
-// import 'package:todo_list_app/utils/updateBackground.dart';
 import 'package:todo_list_app/widgets/appBar.dart';
 import 'package:todo_list_app/widgets/drawer.dart';
 import 'package:todo_list_app/widgets/newtask.dart';
@@ -31,10 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //show a popup to add new task
   void createNewTask() {
     showDialog(
-        context: context,
-        builder: (_) => NewTask(
-              updateCallback: _updateUI,
-            ));
+        context: context, builder: (_) => NewTask(updateCallback: _updateUI));
   }
 
   @override
