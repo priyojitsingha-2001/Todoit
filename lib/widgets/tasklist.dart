@@ -36,7 +36,7 @@ class _TaskListState extends State<TaskList> {
             itemCount: widget.tasklist.length,
             itemBuilder: (context, index) {
               return Card(
-                color: Colors.white60,
+                color: Colors.amber,
                 margin: EdgeInsets.all(10),
                 elevation: 6,
                 child: ListTile(
@@ -56,7 +56,7 @@ class _TaskListState extends State<TaskList> {
                   title: Text(
                     "${widget.tasklist[index].taskName}",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.grey[800],
                       fontSize: 20,
                       fontWeight: FontWeight.w700,
                       decoration: widget.tasklist[index].isDone
