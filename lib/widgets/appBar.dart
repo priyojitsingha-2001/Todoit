@@ -5,16 +5,8 @@ AppBar appBar() {
   return AppBar(
     backgroundColor: Colors.white,
     centerTitle: true,
-    leading: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: IconButton(
-        icon: Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
-        onPressed: () {},
-      ),
-    ),
+    iconTheme: IconThemeData(
+        color: Colors.black), // this make the color of all icons black
     title: const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -38,10 +30,7 @@ AppBar appBar() {
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: IconButton(
-          icon: Icon(
-            Icons.settings,
-            color: Colors.black,
-          ),
+          icon: Icon(Icons.settings),
           onPressed: () {},
         ),
       )

@@ -4,6 +4,7 @@ import 'package:todo_list_app/utils/task_operations.dart';
 
 // import 'package:todo_list_app/utils/updateBackground.dart';
 import 'package:todo_list_app/widgets/appBar.dart';
+import 'package:todo_list_app/widgets/drawer.dart';
 import 'package:todo_list_app/widgets/newtask.dart';
 import 'package:todo_list_app/widgets/tasklist.dart';
 
@@ -53,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
         updatetask: updatetask,
         updateCallback: _updateUI,
       ),
+      drawer: drawer(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue[800],
         onPressed: createNewTask,
